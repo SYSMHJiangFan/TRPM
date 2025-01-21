@@ -1,5 +1,5 @@
 # Deep learning-based model for prediction of early recurrence and therapy response on whole slide images in non-muscle-invasive bladder cancer: a retrospective, multicentre study
-
+This code is modified from the original [DSMIL-WSI repository](https://github.com/binli123/dsmil-wsi).
 ## Introduction
 Background Accurate prediction of early recurrence is essential for disease management of patients with non-muscle-invasive bladder cancer (NMIBC). We aimed to develop and validate a deep learning-based early recurrence predictive model (ERPM) and a treatment response predictive model (TRPM) on whole slide images to assist clinical decision making.
 
