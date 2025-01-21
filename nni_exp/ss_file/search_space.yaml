@@ -1,0 +1,37 @@
+search_space:
+  lr:
+    _type: loguniform
+    _value: [ 0.0001, 0.1]
+  weight_decay:
+    _type: uniform
+    _value: [ 0.00001, 0.01]
+  dropout_patch:
+    _type: uniform
+    _value: [ 0.1, 0.95 ]
+  bag_loss_weight:
+    _type: uniform
+    _value: [ 0.1, 1. ]
+  patch_max_loss_weight:
+    _type: uniform
+    _value: [ 0.1, 1. ]
+  patch_max_loss_top_k:
+    _type: randint
+    _value: [1, 51] 
+
+trial_command: bash run_train_nni.sh
+trial_code_directory: path/to/current_dir
+
+trial_concurrency: 8
+max_trial_number: 100
+trial_gpu_number: 1
+
+tuner:
+  name: TPE
+  class_args:
+    optimize_mode: maximize
+
+training_service:
+  platform: local
+  max_trial_number_per_gpu: 4
+  gpu_indices: 0,1
+  use_active_gpu: true
